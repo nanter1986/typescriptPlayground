@@ -61,8 +61,11 @@ export class activityTester {
 
   fourthMessage(){
     console.log("Your results....");
-    console.log(`Worth of idea is ${(this.player.difficulty*this.player.people*this.player.profit)/(9^3)}`);
+    console.log(`Worth of idea is ${(this.player.difficulty*this.player.people*this.player.profit)/(9*9*9)}`);
     console.log(`Thank you ${this.player.name}`);
+    console.log(`difficulty: ${this.player.difficulty}`);
+    console.log(`people: ${this.player.people}`);
+    console.log(`profit: ${this.player.profit}`);
     process.exit();
   }
 

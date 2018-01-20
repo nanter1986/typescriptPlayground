@@ -50,9 +50,21 @@ var activityTester = (function () {
     };
     activityTester.prototype.fourthMessage = function () {
         console.log("Your results....");
-        console.log("Worth of idea is " + (this.player.difficulty * this.player.people * this.player.profit) / (9 ^ 3));
+        console.log("Worth of idea is " + (this.player.difficulty * this.player.people * this.player.profit) / (9 * 9 * 9));
         console.log("Thank you " + this.player.name);
+        console.log("difficulty: " + this.player.difficulty);
+        console.log("people: " + this.player.people);
+        console.log("profit: " + this.player.profit);
         process.exit();
+    };
+    activityTester.prototype.generalFunction = function (message, whatToDo) {
+        var _this = this;
+        console.log(message);
+        this.r1.question("rate please\n", function (answer) {
+            _this.player.profit = answer;
+            console.log("you rated " + answer);
+            whatToDo();
+        });
     };
     return activityTester;
 }());
